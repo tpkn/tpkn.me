@@ -1,0 +1,257 @@
+@import '@scss/reset.scss';
+@import '@scss/fonts.scss';
+
+/*------------------------------
+  Dark / light themes
+------------------------------*/
+:root {
+	color-scheme: light dark;
+}
+
+::selection {
+	color: #100f0f;
+	background: #e5e5e5;
+}
+
+@media (prefers-color-scheme: light) {
+	body {
+		--body-bg: #fcfcfc;
+		--text-color: #1a1b1d;
+		
+		--a: #000000;
+		--a-border: #dbdada;
+		--a-hover: #000000;
+		--a-hover-border: #100f0f;
+		
+		--npm-img: url('@images/icon-npm.svg');
+		--github-img: url('@images/icon-github.svg');
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		--body-bg: #141515;
+		--text-color: #d8dcdc;
+		
+		--a: #d8dcdc;
+		--a-border: #494949;
+		--a-hover: #ffffff;
+		--a-hover-border: #fdf8f8;
+		
+		--npm-img: url('@images/icon-npm-white.svg');
+		--github-img: url('@images/icon-github-white.svg');
+	}
+}
+
+/*------------------------------
+  Main
+------------------------------*/
+html, body {
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+}
+
+body {
+	background-color: var(--body-bg);
+	color: var(--text-color);
+	
+	font-family: 'Fira Sans', serif;
+	font-weight: 200;
+	font-style: normal;
+}
+
+#app {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	
+	position: relative;
+	min-height: 100%;
+	
+	opacity: 0;
+	transform: scale(0.99);
+	transform-origin: 30% 50%;
+}
+
+#app.animate {
+	animation: abc .5s cubic-bezier(0.490, 0.265, 0.450, 1) 0s 1 forwards;
+	@keyframes abc {
+		0% {
+			opacity: 0;
+			transform: scale(0.99);
+		}
+		100% {
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
+}
+
+.content {
+	display: flex;
+	flex-grow: 2;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.about {
+	line-height: 1.23em;
+}
+
+.where {
+	display: flex;
+	align-items: center;
+	
+	margin: 25px 0;
+	
+	li:not(:last-child) {
+		margin-right: 20px;
+	}
+	
+	.icons {
+		height: 35px;
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+	
+	.github {
+		width: 35px;
+		background-image: var(--github-img);
+	}
+	
+	.npm {
+		width: 87px;
+		background-image: var(--npm-img);
+	}
+}
+
+.footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	
+	.language {
+		font-size: 15px;
+		font-style: italic;
+		user-select: none;
+		
+		.current {
+			display: none;
+		}
+		
+		a, a:visited, a:hover {
+			color: var(--a);
+			border-bottom: 1px solid var(--a-border);
+			
+			cursor: pointer;
+			white-space: nowrap;
+			text-decoration: none;
+		}
+	}
+}
+
+a.invisible {
+	border-bottom: none;
+}
+
+/*------------------------------
+  Responsive stuff
+------------------------------*/
+@media screen and (min-width: 0px) {
+	#app {
+		padding: 15px 15px;
+	}
+	.about {
+		font-size: 25px;
+	}
+	.where {
+		li:not(:last-child) {
+			margin-right: 15px;
+		}
+		
+		.icons {
+			height: 25px;
+		}
+		
+		.github {
+			width: 25px;
+		}
+		
+		.npm {
+			width: 67px;
+		}
+	}
+}
+
+@media screen and (min-width: 350px) {
+	.about {
+		font-size: 30px;
+	}
+}
+
+@media screen and (min-width: 450px) {
+	#app {
+		padding: 15px 25px;
+	}
+	.about {
+		font-size: 35px;
+	}
+	.where {
+		li:not(:last-child) {
+			margin-right: 20px;
+		}
+		
+		.icons {
+			height: 35px;
+		}
+		
+		.github {
+			width: 35px;
+		}
+		
+		.npm {
+			width: 87px;
+		}
+	}
+}
+
+@media screen and (min-width: 530px) {
+	#app {
+		padding: 30px 40px;
+	}
+}
+
+@media screen and (min-width: 1000px) {
+	#app {
+		padding: 40px 50px;
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	#app {
+		padding: 40px 50px;
+	}
+	.where {
+		li:not(:last-child) {
+			margin-right: 30px;
+		}
+		
+		.icons {
+			height: 45px;
+		}
+		
+		.github {
+			width: 45px;
+		}
+		
+		.npm {
+			width: 104px;
+		}
+	}
+	.about {
+		font-size: 50px;
+	}
+}
+

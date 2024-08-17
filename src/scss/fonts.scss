@@ -1,0 +1,24 @@
+/**
+ * Fira Sans
+ */
+@font-face {
+	font-family: 'Fira Sans';
+	src: url("@fonts/FiraSans-UltraLight.eot");
+	src: local("Fira Sans Light"),
+	url("@fonts/FiraSans-UltraLight.eot") format("embedded-opentype"),
+	url("@fonts/FiraSans-UltraLight.woff") format("woff"),
+	url("@fonts/FiraSans-UltraLight.ttf") format("truetype");
+	font-weight: 200;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Fira Sans';
+	src: url("@fonts/FiraSans-UltraLightItalic.eot");
+	src: local("Fira Sans Light Italic"),
+	url("@fonts/FiraSans-UltraLightItalic.eot") format("embedded-opentype"),
+	url("@fonts/FiraSans-UltraLightItalic.woff") format("woff"),
+	url("@fonts/FiraSans-UltraLightItalic.ttf") format("truetype");
+	font-weight: 200;
+	font-style: italic;
+}

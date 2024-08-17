@@ -1,0 +1,27 @@
+{
+	"name": "tpkn",
+	"version": "3.2.18",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"preview": "vite",
+		"build": "vite build",
+		"build_patch": "npm version patch && vite build",
+		"build_minor": "npm version minor && vite build",
+		"build_major": "npm version major && vite build"
+	},
+	"dependencies": {
+		"vue": "^3.4.21",
+		"vue-router": "^4.3.0"
+	},
+	"devDependencies": {
+		"@vitejs/plugin-vue": "^5.0.4",
+		"autoprefixer": "^10.4.19",
+		"sass": "^1.72.0",
+		"vite": "^5.1.6"
+	},
+	"browserslist": [
+		"> 0%",
+		"not ie <= 8"
+	]
+}
